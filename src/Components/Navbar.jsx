@@ -16,6 +16,7 @@ const Navbar = () => {
                     <li><Link className={`mr-3 ${pathName === '/about' && 'text-red-500'}`} href={`/about`}>About</Link></li>
                     <li><Link className={`mr-3 ${pathName === '/services' && 'text-red-500'}`} href={`/services`}>Service</Link></li>
                     <li><Link className={`mr-3 ${pathName === '/blog'&& 'text-red-500'}`} href={`/blog`}>Blog</Link></li>
+                    <li><Link className={`mr-3 ${pathName === '/cetegory'&& 'text-red-500'}`} href={`/cetegory`}>Cetegories</Link></li>
                 </ul>
             </div>
             <div>
