@@ -4,9 +4,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
-    const pathName = usePathname();
-    console.log(pathName);
-    
+    const pathName = usePathname();   
     return (
         <div className='container mx-auto flex justify-between p-5 bg-slate-200'>
             <div>

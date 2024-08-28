@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import React from 'react';
 const services = [
     {
         "id": 1,
@@ -27,31 +27,20 @@ const services = [
     }
 ]
 
+const servicesDetails = ({ params }) => {
+    console.log(params.servicesdetails);
+    // Fetch the specific service based on the id
+    const service = services.find((service) => service.id === parseInt(params.servicesdetails));
 
-const Servicespage = () => {
     return (
         <div className="flex min-h-screen flex-col items-center justify-between p-24">
-            <h3 className='text-3xl mb-4'>Services page</h3>
-            <div className='grid grid-cols-3 gap-5'>
-                {
-                    services.map((service) => (
-                        <div key={service.id} className="p-4 bg-gray-100 rounded-lg flex flex-col items-center w-full sm:w-auto">
-                            <h2 className="mb-3 text-xl font-semibold">{service.title}</h2>
-                            <p className="mb-3 text-gray-700">{service.description}</p>
-                            <div className="mt-auto">
-                                <Link href={`/services/${service.id}`}>
-                                <button className='bg-red-500 px-5 py-2 rounded-md text-white' type="button">Details</button>
-                                </Link>
-                            </div>
-                        </div>
+            <h2>Services Details Page</h2>
+            <h3>{service.id}</h3>
+            <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
+            <p className="text-lg text-gray-700 mb-6">{service.description}</p>
 
-                    ))
-                }
-
-            </div>
-            <Link className='text-red-500' href="/services/car">Car--</Link>
         </div>
     );
 };
 
-export default Servicespage;
+export default servicesDetails;
